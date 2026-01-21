@@ -25,7 +25,7 @@ export interface DetectorOptions {
 }
 
 const DEFAULT_TEST_PATTERNS = [
-  /\.(test|spec)\.(ts|tsx|js|jsx)$/,
+  /\.(test|spec)\.(ts|tsx|js|jsx|mjs|cjs)$/,
 ];
 
 /**
