@@ -94,7 +94,7 @@ export function analyzeTestFile(filePath: string): SuspiciousTest | null {
   // Anti-pattern 4: No imports from actual source code
   const hasSourceImports = content.match(/from ['"]\.\.+(\/[^'"]*)?(?<!\.test)(?<!\.spec)['"]/);
   const hasTestingLibImports = content.includes('@testing-library');
-  const isIntegrationTest = filePath.includes('integration.test') || filePath.includes('e2e.test');
+  const isIntegrationTest = /[/\\](integration|e2e)\.test\.(ts|tsx|js|jsx|mjs|cjs)$/.test(filePath);
 
   // Only flag if there are testing library imports but NO source imports at all
   if (hasTestingLibImports && !hasSourceImports && !isIntegrationTest) {
