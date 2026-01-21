@@ -1,0 +1,37 @@
+{
+  "name": "@mathonsunday/useless-test-detector",
+  "version": "0.1.0",
+  "description": "Detects test files that don't actually test real implementations",
+  "type": "module",
+  "bin": {
+    "useless-tests": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "node --test"
+  },
+  "keywords": [
+    "testing",
+    "test-quality",
+    "test-smells",
+    "code-quality"
+  ],
+  "author": "mathonsunday",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "~5.9.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
